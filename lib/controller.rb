@@ -25,7 +25,7 @@ get '/gossips/:id/edit/' do
 end
 
 post '/gossips/:id/edit/' do
-  id = (params["id"]).to_i
+
   Gossip.update(params["gossip_new_author"], params["gossip_new_content"],params['id'].to_i)
   redirect '/'
 end
