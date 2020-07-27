@@ -5,7 +5,13 @@
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
 
-    <h2> Pas de potin pour le moment mais tu peux aller en créer un en suivant ce lien ! </h2>
+    <h2> Voici les potins !</h2>
     <a href="/gossips/new/">Nouveau gossip</a>
-  </body>
-</html>
+
+    <% gossips.each_with_index do |gossip,id|%>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %><br>
+          <a href = "./gossips/<%=id%>/">Lien vers le potin</a>
+        </p>
+      <%end%>
